@@ -1,9 +1,9 @@
 class EndpointController < ApplicationController
     def info
-      slack_name = 'Tom Udoh' 
-      track = 'backend track' 
+      slack_name = params[:slack_name] 
+      track = 'backend' 
       current_day = Date.today.strftime("%A")
-      utc_time = Time.now.utc.strftime("%FT%T%Z")
+      utc_time = Time.now.utc.strftime("%Y-%m-%dT%H:%M:%SZ") 
       github_file_url = "https://github.com/tomdan-ai/ruby-hngx-endpoints/blob/main/app/controllers/endpoint_controller.rb"
       github_repo_url = "https://github.com/tomdan-ai/ruby-hngx-endpoints"
       status_code = 200
